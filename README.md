@@ -1,5 +1,11 @@
 # Rabbits-Life
 
+## Como Jogar
+Quando o jogador começar a controlar o coelho, irá se movimentar para cima, baixo e para os lados, devendo conseguir chegar aos arbustos no topo do cenário sem colidir com os obstáculos que têm na avenida e floresta onde tem as raposas, carros e caminhões. Ele pode também alterar a velocidade dos objetos na cena clicando nas teclas do 1 ao 8.
+
+## Modelagem
+![Image](screenshot/game/Rabbits-Life.png)
+
 ## Referência
 
 - Frogger 1981
