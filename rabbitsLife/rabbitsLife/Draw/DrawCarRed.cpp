@@ -8,40 +8,64 @@
 
 #define GL_SILENCE_DEPRECATION
 #include <GLUT/GLUT.h>
+#include "DrawCarRed.h"
 
-class DrawCarRed {
+//private:
+//    DrawCarRed();
+    
+//public:
+//    static DrawCarRed *instance;
+//    //static DrawCarRed* getInstance();
+//    float xCloser = 0;//mais perto
+//    float xFurther = 0;//mais longe
     
 //public
-public:
-    float xCloser = 0;//mais perto
-    float xFurther = 0;//mais longe
-
-public: void car(int x){
+//public:
+DrawCarRed *getInstance() {
+    if (!DrawCarRed::instance)
+        DrawCarRed::instance = new DrawCarRed;
+    return DrawCarRed::instance;
+}
+    
+//public:
+void DrawCarRed::car(int x){
     glColor3f(1,0,0);
     glBegin(GL_QUADS);
-        carRed(x);
+        DrawCarRed::carRed(x);
     glEnd();
    
     glColor3f(1,1,1);
     glBegin(GL_POINTS);
-        wheelsCar(x);
+        DrawCarRed::wheelsCar(x);
     glEnd();
 }
 
-private: void carRed(int x){
+//private
+//private:
+void DrawCarRed::carRed(int x){
     glVertex2f(x+1,11);//Ponto A
     glVertex2f(x+5,11);//Ponto B
     glVertex2f(x+5,14);//Ponto C
     glVertex2f(x+1,14);//Ponto D
     
     xCloser = x+1;
-    xFurther = x+4;
+    xFurther = x+14;
 }
 
-private: void wheelsCar(int x){
+//private:
+void DrawCarRed::wheelsCar(int x){
     glVertex2f(x+2,11);//Roda 1
     glVertex2f(x+4,11);//Roda 2
     glVertex2f(x+4,14);//Roda 3
     glVertex2f(x+2,14);//Roda 4
 }
-};
+
+
+DrawCarRed *DrawCarRed::instance = 0;
+
+//DrawCarRed* DrawCarRed::getInstance()
+//{
+//    static DrawCarRed instance;
+//
+//    return &instance;
+//}

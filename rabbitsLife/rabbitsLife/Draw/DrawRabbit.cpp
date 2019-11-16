@@ -18,22 +18,12 @@ public:
     float yLower = 0;//mais baixo
 
 //public
-public: void rabbit(float x, float y, bool isDied, bool isVictory){
+public: void rabbit(float x, float y){
     glBegin(GL_QUADS);
-        if (isVictory)
-            glColor3f(0.8, 0.498039, 0.196078);
-        else if (isDied)
-            glColor3f(0.752941, 0.752941, 0.752941);
-        else
-            glColor3f(1, 0.204, 0.229);
+        glColor3f(1, 0.204, 0.229);
         rabbitEar(x,y);
     
-        if (isVictory)
-            glColor3f(1, 1, 0);
-        else if (isDied)
-            glColor3f(0.329412, 0.329412, 0.329412);
-        else
-            glColor3f(0.51, 1, 1);
+        glColor3f(0.51, 1, 1);
         rabbitHead(x,y);
     
         glColor3f(1, 1, 1);

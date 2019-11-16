@@ -12,42 +12,35 @@
 class DrawTruckYellow {
     
 //public
-public:
-    float xCloser = 0;//mais perto
-    float xFurther = 0;//mais longe
-    
-public: void truckYellow(int x){
+public: void truckYellow(int x1){
     glColor3f(1,1,0);
     glBegin(GL_QUADS);
-        _truckYellow(x);
+        _truckYellow(x1);
     glEnd();
     
     glColor3f(1,1,1);
     glBegin(GL_POINTS);
-        wheelsTruckYellow(x);
+        wheelsTruckYellow(x1);
     glEnd();
 }
 
 //private
-private: void _truckYellow(int x){
+private: void _truckYellow(int x1){
     //CAMINHAO FRENTE
-    glVertex2f(x+1,26);//Ponto A
-    glVertex2f(x+3,26);//Ponto B
-    glVertex2f(x+3,28);//Ponto C
-    glVertex2f(x+1,28);//Ponto D
+    glVertex2f(x1+1,26);//Ponto A
+    glVertex2f(x1+3,26);//Ponto B
+    glVertex2f(x1+3,28);//Ponto C
+    glVertex2f(x1+1,28);//Ponto D
     
     //CAMINHAO TRASEIRA
-    glVertex2f(x+2.5,26);//Ponto A
-    glVertex2f(x+5,26);//Ponto B
-    glVertex2f(x+5,29);//Ponto C
-    glVertex2f(x+2.5,29);//Ponto D
-    
-    xCloser = x+1;
-    xFurther = x+5;
+    glVertex2f(x1+2.5,26);//Ponto A
+    glVertex2f(x1+5,26);//Ponto B
+    glVertex2f(x1+5,29);//Ponto C
+    glVertex2f(x1+2.5,29);//Ponto D
 }
 
-private: void wheelsTruckYellow(int x){
-    glVertex2f(x+2,26);//Ponto A
-    glVertex2f(x+4,26);//Ponto A
+private: void wheelsTruckYellow(int x1){
+    glVertex2f(x1+2,26);//Ponto A
+    glVertex2f(x1+4,26);//Ponto A
 }
 };

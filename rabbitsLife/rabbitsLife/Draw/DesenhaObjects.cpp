@@ -29,7 +29,7 @@ public:
     DrawRabbit * drawRabbit = new DrawRabbit();
     DrawTruck * drawTruck = new DrawTruck();
     DrawTruckYellow * drawTruckYellow = new DrawTruckYellow();
-    DrawCarRed* drawCarRed = new DrawCarRed();
+    DrawCarRed* drawCarRed = drawCarRed->getInstance();;
     DrawCarGrey * drawCarGrey = new DrawCarGrey();
     DrawFox * drawFox = new DrawFox();
     DrawFoxTwo * drawFoxTwo = new DrawFoxTwo();
@@ -41,7 +41,7 @@ private:
     DrawFaixa * drawFaixa = new DrawFaixa();
     DrawCalcada * drawCalcada = new DrawCalcada();
     
-public: void showDrawings(int x1Fox, int x1FoxTwo, int x1TruckYellow, int x1CarGrey, int x1Truck ,int x1CarRed){
+public: void showDrawings(int xRabbit, int yRabbit, int x1Fox, int x1FoxTwo, int x1TruckYellow, int x1CarGrey, int x1Truck ,int x1CarRed){
     drawForest->forest();
     drawTrunk->trunk();
     drawTruck->truck(x1Truck);
@@ -53,13 +53,7 @@ public: void showDrawings(int x1Fox, int x1FoxTwo, int x1TruckYellow, int x1CarG
     drawCalcada->calcadas();
     drawFox->foxOne(x1Fox);
     drawFoxTwo->foxTwo(x1FoxTwo);
+    drawFixedRabbit->fixedRabbit();
+    drawRabbit->rabbit(xRabbit,yRabbit);
 }
-    
-public: void showDrawingRabbit(int xRabbit, int yRabbit, bool isDied, bool isVictory){
-    drawRabbit->rabbit(xRabbit, yRabbit, isDied, isVictory);
-};
-    
-public: void showDrawingFixedRabbit(int x, bool isDied, bool isVictory){
-    drawFixedRabbit->fixedRabbit(x, isDied, isVictory);
-};
 };
